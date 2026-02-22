@@ -9,7 +9,7 @@ const island = Island_Moments({
   subsets: ["latin"],
 });
 
-export default function Header(): JSX.Element {
+export default function Header() {
   const pathname = usePathname();
 
   const navLinks = [
@@ -21,9 +21,10 @@ export default function Header(): JSX.Element {
 
   return (
     <header className="w-full px-8 bg-white py-4 flex items-center shadow-sm">
-      
-      <Link href="/">
-        <h1 className={`${island.className} text-[40px] font-normal text-[#FF7A18] cursor-pointer`}>
+      <Link href="/" className="cursor-pointer">
+        <h1
+          className={`${island.className} text-[40px] font-normal text-[#FF7A18]`}
+        >
           Chuks Kitchen
         </h1>
       </Link>
@@ -33,7 +34,7 @@ export default function Header(): JSX.Element {
           <Link
             key={link.name}
             href={link.path}
-            className={`text-[16px] font-normal transition-colors ${
+            className={`text-[16px] transition-colors ${
               pathname === link.path
                 ? "text-[#FF7A18] font-semibold"
                 : "text-gray-700 hover:text-[#FF7A18]"
@@ -45,7 +46,7 @@ export default function Header(): JSX.Element {
       </nav>
 
       <Link href="/login">
-        <button className="px-8 rounded-lg text-white font-normal cursor-pointer py-2 bg-[#FF7A18] hover:bg-orange-600 transition">
+        <button className="px-8 rounded-lg text-white py-2 bg-[#FF7A18] hover:bg-orange-600 transition">
           Login
         </button>
       </Link>
