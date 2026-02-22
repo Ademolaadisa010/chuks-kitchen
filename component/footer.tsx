@@ -1,4 +1,5 @@
 import { Island_Moments } from "next/font/google";
+import Link from "next/link";
 const island = Island_Moments({
   weight: "400",
   subsets: ["latin"],
@@ -23,15 +24,19 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3 text-gray-200">
-              <li className="hover:text-white text-[12px] cursor-pointer">Home</li>
-              <li className="hover:text-white text-[12px] cursor-pointer">Explore</li>
-              <li className="hover:text-white text-[12px] cursor-pointer">My Order</li>
-              <li className="hover:text-white text-[12px] cursor-pointer">Account</li>
-              <li className="hover:text-white text-[12px] cursor-pointer">Contact</li>
+              <Link href="/home" className="mb-3">
+              <li className="hover:text-white text-[12px] mb-2 cursor-pointer">Home</li></Link>
+              <Link href="/explore">
+              <li className="hover:text-white text-[12px] mb-2 cursor-pointer">Explore</li></Link>
+              <Link href="/order">
+              <li className="hover:text-white text-[12px] mb-2 cursor-pointer">My Order</li></Link>
+              <Link href="/home">
+              <li className="hover:text-white text-[12px] mb-2 cursor-pointer">Account</li></Link>
+              <Link href="/">
+              <li className="hover:text-white text-[12px] mb-2 cursor-pointer">Contact</li></Link>
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="text-xl font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-3 text-gray-200">
@@ -41,7 +46,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Social Links */}
           <div className="space-y-3 text-gray-200">
             <p className="hover:text-white text-[12px] cursor-pointer">Facebook</p>
             <p className="hover:text-white text-[12px] cursor-pointer">Twitter</p>
@@ -50,16 +54,15 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Section */}
         <div className="mt-20 text-gray-300 text-sm">
           © 2020 Lift Media. All rights reserved.
         </div>
       </div>
 
-      {/* Scroll To Top Button */}
+      <Link href="#">
       <button className="fixed bottom-10 right-10 bg-blue-500 hover:bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition">
         ↑
-      </button>
+      </button></Link>
     </footer>
   );
 }

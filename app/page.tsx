@@ -26,7 +26,8 @@ export default function Onboarding() {
         <div className="flex-1 min-h-screen pl-20 pr-10 pt-8">
           <nav className="flex-1 flex justify-between items-center">
             <h1 className={`${island.className} text-5xl font-normal text-[#FF7A18]`}>Chuks Kitchen</h1>
-            <button className="border-2 border-[#1E88E5] text-[#1E88E5] px-5 py-1 rounded-lg cursor-pointer">Sign In</button>
+            <Link href="/login">
+            <button className="border-2 border-[#1E88E5] text-[#1E88E5] px-5 py-1 rounded-lg cursor-pointer">Sign In</button></Link>
           </nav>
 
           <div className="mt-20">
@@ -48,7 +49,7 @@ export default function Onboarding() {
             <i className="fa-solid fa-truck text-[#FF7A18] p-2 bg-[#FFE1C4] rounded-lg"></i>
             <h4 className={`${inter.className} text-[16px] text-[#1F2937]`}>Fast & Reliable Delivery</h4>
           </nav>
-          <Link href="/login"><button className="mt-[30px] bg-[#FF7A18] w-full h-12 rounded-lg cursor-pointer">Start Your Order</button></Link>
+          <Link href="/login"><button className="mt-[30px] bg-[#FF7A18] text-white w-full h-12 rounded-lg cursor-pointer">Start Your Order</button></Link>
           <Link href="/home">
           <button className="mt-[30px] text-[#1E88E5] border-[#1E88E5] border-2 w-full h-12 rounded-lg cursor-pointer">Learn More About Us</button></Link>
           <p className="text-center my-10 text-[14px] text-[#1F2937]">&copy; 2024 Chuks Kitchen. <Link className="text-[#64B5F6]" href="/">Privacy Policy Terms of Service</Link></p>
