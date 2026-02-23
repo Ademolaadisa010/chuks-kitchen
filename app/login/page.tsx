@@ -115,7 +115,7 @@ export default function Login() {
 
       <main className="flex w-full">
         <aside
-          className="relative flex flex-1 min-h-screen items-center justify-center bg-cover bg-center"
+          className="relative hidden md:block flex flex-1 min-h-screen items-center justify-center bg-cover bg-center"
           style={{ backgroundImage: "url('/family.svg')" }}
         >
           <div className="absolute inset-0 bg-[#FF7A18B2]"></div>
@@ -130,7 +130,7 @@ export default function Login() {
         </aside>
 
         <section className="flex-1 flex justify-center bg-white items-center">
-          <div className="w-[60%] min-h-30">
+          <div className="md:w-[60%] w-full px-3 min-h-30">
             <h1
               className={`${island.className} text-[40px] text-center font-normal text-[#FF7A18]`}
             >

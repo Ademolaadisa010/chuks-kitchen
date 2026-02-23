@@ -6,7 +6,7 @@ const island = Island_Moments({
 });
 export default function Footer() {
   return (
-    <footer className="bg-[#7B4B2A] text-white">
+    <footer className="bg-[#7B4B2A] text-white hidden md:block">
       <div className="max-w-7xl mx-auto px-12 py-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-20">
           
