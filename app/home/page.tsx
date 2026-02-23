@@ -152,11 +152,11 @@ export default function Home() {
           style={{ backgroundImage: "url('/Welcome.png')" }}
         >
           <div className="absolute inset-0 bg-[#00000073]"></div>
-          <div className="relative z-10 px-8 text-white">
-            <h1 className="text-[48px] leading-[50px] font-semibold w-[60%]">
+          <div className="relative z-10 pl-1 md:px-8 text-white">
+            <h1 className="text-[32px] md:text-[48px] leading-[50px] font-bold md:w-[60%] w-full">
               The Heart of Nigerian Home Cooking
             </h1>
-            <p className="leading-relaxed mt-5 text-[32px] font-bold">
+            <p className="leading-relaxed mt-5 md:text-[32px] text-[16px] font-semibold">
               Handcrafted with passion, delivered with care.
             </p>
             <button className="bg-[#FF7A18] mt-5 px-5 py-3 rounded-lg cursor-pointer">
@@ -165,22 +165,20 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Search */}
-        <nav className="w-[70%] mx-auto rounded-sm bg-white px-4 flex items-center mt-[-30px] relative">
+        <nav className="md:w-[70%] w-[95%] mx-auto rounded-sm bg-white md:px-4 px-2 flex items-center mt-[-30px] relative">
           <i className="fa-solid fa-magnifying-glass text-3xl mr-3 text-[#807373]"></i>
           <input
-            className="h-15 flex-1 outline-none border-none text-[#1F2937] text-[24px]"
+            className="h-15 flex-1 outline-none border-none text-[#1F2937] text-[16px] md:text-[24px]"
             type="search"
             placeholder="What are you craving for today?"
           />
         </nav>
 
-        {/* Popular Categories */}
         <h1 className="text-[32px] text-[#1F2937] text-center font-bold mt-20">
           Popular Categories
         </h1>
 
-        <section className="w-[90%] mx-auto flex flex-wrap justify-between mt-10">
+        <section className="w-[90%] mx-auto flex flex-col md:flex-row flex-wrap justify-between mt-10">
           {[
             { img: "/jollof.png", label: "Jollof Delights" },
             { img: "/swallow.png", label: "Swallow & Soups" },
@@ -189,7 +187,7 @@ export default function Home() {
             { img: "/fish.jpg", label: "Fish" },
             { img: "/Welcome.png", label: "Jollof Rice" },
           ].map((cat) => (
-            <div key={cat.label} className="w-[30%] bg-white mb-10 rounded-[20px] overflow-hidden">
+            <div key={cat.label} className="md:w-[30%] w-[95%] bg-white mb-10 rounded-[20px] overflow-hidden">
               <img src={cat.img} alt={cat.label} className="rounded-t-[20px] w-full" />
               <nav className="h-30 flex items-center justify-center">
                 <p className="text-[#1F2937] text-[24px] font-bold">{cat.label}</p>
@@ -198,14 +196,13 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Chef's Specials */}
         <h1 className="text-[32px] text-[#1F2937] text-center font-bold mt-40">
           Chef&apos;s Specials
         </h1>
 
-        <section className="w-[90%] mx-auto flex flex-wrap justify-between mt-10">
+        <section className="w-[90%] mx-auto flex flex-col md:flex-row flex-wrap justify-between mt-10">
           {chefsSpecials.map((food) => (
-            <div key={food.id} className="w-[30%] bg-white mb-10 rounded-[20px] overflow-hidden">
+            <div key={food.id} className="md:w-[30%] w-[95%] bg-white mb-10 rounded-[20px] overflow-hidden">
               <img src={food.image} alt={food.name} className="rounded-t-[20px] w-full" />
               <nav className="min-h-30 px-4 py-3">
                 <h4 className="text-[20px] text-[#1F2937] font-bold mb-1">{food.name}</h4>
@@ -226,17 +223,16 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Promo Banner */}
         <section
           className="relative flex flex-1 min-h-150 mt-30 items-center bg-cover bg-center"
           style={{ backgroundImage: "url('/egusi.png')" }}
         >
           <div className="absolute inset-0 bg-[#1D1D1D73]"></div>
-          <div className="relative z-10 pl-15">
-            <h1 className="text-[48px] font-bold text-white">
+          <div className="relative z-10 pl-2 md:pl-15">
+            <h1 className="text-[32px] md:text-[48px] font-bold text-white">
               Introducing Our New Menu Additions!
             </h1>
-            <p className="text-lg leading-relaxed text-[#FFFFFF] w-[50%]">
+            <p className="text-lg leading-relaxed text-[#FFFFFF] w-[90%] md:w-[50%]">
               Explore exciting new dishes, crafted with the freshest ingredients
               and authentic Nigerian flavors. Limited time offer!
             </p>

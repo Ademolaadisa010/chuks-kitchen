@@ -23,7 +23,7 @@ export default function Onboarding() {
         <div className="relative hidden md:block flex-1 min-h-screen">
           <Image src={Family} alt="family picture" fill className="object-cover" priority/>
         </div>
-        <Image src={Plantain} alt="platain" />
+        <Image src={Plantain} className="md:hidden block w-full" alt="platain" />
         <div className="flex-1 min-h-screen md:pl-20 md:pr-10 px-2 pt-8">
           <nav className="flex-1 flex justify-center md:justify-between items-center">
             <h1 className={`${island.className} text-5xl text-center font-normal text-[#FF7A18]`}>Chuks Kitchen</h1>

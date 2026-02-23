@@ -71,7 +71,7 @@ export default function Order() {
   return (
     <div className="bg-[#F3F4F6] w-full min-h-screen">
       <Header />
-      <main className="px-8 my-20">
+      <main className="px-2 md:px-8 my-5 md:my-20">
         <section className="w-full min-h-10 bg-white rounded-sm py-3 px-2">
           <h1 className="text-[32px] text-[#000000] font-bold mb-4">Your Cart</h1>
 
@@ -87,64 +87,78 @@ export default function Order() {
             </div>
           ) : (
             <>
-              <div>
+              <div className="flex flex-col gap-3">
                 {cart.map((item) => (
-                  <nav
+                  <div
                     key={item.cartId}
-                    className="px-2 py-1 border-1 rounded-sm mb-2 border-[#BDBDBD] flex"
+                    className="border border-[#BDBDBD] rounded-sm flex flex-row overflow-hidden"
                   >
+                    {/* Left: square food image */}
                     <img
                       src={item.image}
-                      className="w-[200px] h-[150px] object-cover rounded-sm flex-shrink-0"
                       alt={item.name}
+                      className="w-[110px] h-[110px] md:w-[160px] md:h-[160px] flex-shrink-0 object-cover"
                     />
-                    <div className="flex-1 flex items-center justify-between px-4">
-                      <nav className="ml-4 flex-1">
-                        <h4 className="text-[24px] text-[#000000] font-bold">{item.name}</h4>
-                        <p className="text-[#4B5563] text-[15px] mt-1">
-                          Protein: {item.selectedProtein}
+
+                    {/* Right: all details in a column */}
+                    <div className="flex-1 flex flex-col justify-between px-3 py-2 md:px-5 md:py-3">
+
+                      {/* Top: name + description */}
+                      <div>
+                        <h4 className="text-[15px] md:text-[20px] text-[#000000] font-bold leading-snug">
+                          {item.name}
+                        </h4>
+                        <p className="text-[#4B5563] text-[12px] md:text-[14px] mt-1">
+                          {[
+                            item.selectedProtein,
+                            ...(item.selectedSides.length > 0 ? [item.selectedSides.join(", ")] : []),
+                          ].filter(Boolean).join(", ")}
                         </p>
-                        {item.selectedSides.length > 0 && (
-                          <p className="text-[#4B5563] text-[15px]">
-                            Sides: {item.selectedSides.join(", ")}
-                          </p>
-                        )}
                         {item.instructions && (
-                          <p className="text-[#4B5563] text-[13px] italic mt-1">
-                            Note: {item.instructions}
+                          <p className="text-[#4B5563] text-[11px] md:text-[13px] italic mt-0.5">
+                            {item.instructions}
                           </p>
                         )}
-                      </nav>
+                      </div>
 
-                      <nav className="flex items-center gap-4 mx-6">
-                        <button
-                          onClick={() => increaseQty(item.cartId)}
-                          className="fa-solid fa-plus bg-[#BDBDBD] p-2 rounded-sm cursor-pointer hover:bg-gray-400 transition"
-                        />
-                        <p className="text-[#000000] text-[24px] font-bold w-6 text-center">
-                          {item.quantity}
-                        </p>
-                        <button
-                          onClick={() => decreaseQty(item.cartId)}
-                          className="fa-solid fa-minus bg-[#BDBDBD] p-2 rounded-sm cursor-pointer hover:bg-gray-400 transition"
-                        />
-                      </nav>
+                      {/* Bottom: qty controls on left | price + X on right */}
+                      <div className="flex items-center justify-between mt-2">
 
-                      <p className="text-[#FF7A18] text-[28px] font-bold mr-6">
-                        ₦{(item.total * item.quantity).toLocaleString()}
-                      </p>
+                        {/* Left: + qty - */}
+                        <div className="flex items-center gap-3">
+                          <button
+                            onClick={() => increaseQty(item.cartId)}
+                            className="fa-solid fa-plus text-[#4B5563] cursor-pointer hover:text-[#FF7A18] transition text-[14px] md:text-[16px]"
+                          />
+                          <p className="text-[#000000] text-[16px] md:text-[20px] font-bold w-5 text-center">
+                            {item.quantity}
+                          </p>
+                          <button
+                            onClick={() => decreaseQty(item.cartId)}
+                            className="fa-solid fa-minus text-[#4B5563] cursor-pointer hover:text-[#FF7A18] transition text-[14px] md:text-[16px]"
+                          />
+                        </div>
 
-                      <button
-                        onClick={() => removeItem(item.cartId)}
-                        className="fa-solid fa-x bg-[#FF7A18] p-2 rounded-sm cursor-pointer text-white hover:bg-orange-600 transition"
-                      />
+                        {/* Right: price + X side by side */}
+                        <div className="flex items-center gap-3">
+                          <p className="text-[#FF7A18] text-[16px] md:text-[22px] font-bold">
+                            ₦{(item.total * item.quantity).toLocaleString()}
+                          </p>
+                          <button
+                            onClick={() => removeItem(item.cartId)}
+                            className="bg-[#FF7A18] text-white w-8 h-8 flex items-center justify-center rounded-sm cursor-pointer hover:bg-orange-600 transition flex-shrink-0 text-[12px]"
+                          >
+                            <i className="fa-solid fa-x" />
+                          </button>
+                        </div>
+                      </div>
                     </div>
-                  </nav>
+                  </div>
                 ))}
               </div>
 
               <Link href="/home">
-                <p className="text-[#1E88E5] cursor-pointer mt-3 mb-2 inline-block">
+                <p className="text-[#1E88E5] cursor-pointer mt-3 mb-2 inline-block text-[14px] md:text-[16px]">
                   <i className="fa-solid fa-plus mr-2"></i>
                   Add more items from Chuks Kitchen
                 </p>
@@ -152,7 +166,7 @@ export default function Order() {
 
               <button
                 onClick={handleCheckout}
-                className="w-full h-12 bg-[#FF7A18] text-white rounded-sm cursor-pointer mt-6 hover:bg-orange-600 transition text-[16px] font-semibold"
+                className="w-full h-12 bg-[#FF7A18] text-white rounded-sm cursor-pointer mt-4 hover:bg-orange-600 transition text-[16px] font-semibold"
               >
                 Proceed to Checkout
               </button>
