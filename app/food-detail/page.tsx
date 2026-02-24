@@ -103,10 +103,9 @@ function FoodDetailContent() {
   return (
     <div className="min-h-screen bg-[#F3F4F6]">
       <Toaster />
-      <div className="flex max-w-[1200px] mx-auto min-h-[85vh] bg-white rounded-2xl overflow-hidden my-10 shadow-sm">
+      <div className="flex flex-col md:flex-row max-w-[1200px] mx-auto min-h-[85vh] bg-white rounded-2xl overflow-hidden md:my-10 shadow-sm">
 
-        {/* Left: Food Image */}
-        <div className="w-[45%] sticky top-0 self-start">
+        <div className="md:w-[45%] w-full sticky top-0 self-start">
           <img
             src={food.image}
             alt={food.name}
@@ -114,8 +113,7 @@ function FoodDetailContent() {
           />
         </div>
 
-        {/* Right: Details */}
-        <div className="flex-1 overflow-y-auto px-10 py-8">
+        <div className="flex-1 overflow-y-auto px-2 md:px-10 py-8">
           <button
             onClick={() => router.back()}
             className="flex items-center gap-2 text-[#3B4758] text-[14px] mb-6 hover:text-[#FF7A18] transition cursor-pointer"

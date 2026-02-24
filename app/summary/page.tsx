@@ -105,31 +105,12 @@ export default function OrderSummary() {
       <Toaster />
       <Header />
       <main className="flex justify-center items-center">
-        <section className="w-[50%] min-h-40 bg-white my-10 px-4">
+        <section className="md:w-[50%] w-full min-h-40 bg-white my-10 px-2 md:px-4">
 
           <h1 className="text-[#000000] text-[32px] font-bold py-2 border-b border-[#BDBDBD]">
             Order Summary
           </h1>
 
-          {/* Items recap */}
-          <div className="mt-4 mb-4 flex flex-col gap-3">
-            {data.cart.map((item) => (
-              <div key={item.cartId} className="flex items-center gap-3 border-b border-gray-100 pb-3">
-                <img src={item.image} alt={item.name} className="w-[60px] h-[55px] object-cover rounded-lg flex-shrink-0" />
-                <div className="flex-1">
-                  <p className="text-[#1F2937] font-semibold text-[15px]">{item.name}</p>
-                  <p className="text-[#4B5563] text-[12px]">
-                    {item.selectedProtein}
-                    {item.selectedSides.length > 0 ? `, ${item.selectedSides.join(", ")}` : ""}
-                  </p>
-                  <p className="text-[#4B5563] text-[12px]">Qty: {item.quantity}</p>
-                </div>
-                <p className="text-[#FF7A18] font-bold text-[15px]">
-                  ₦{(item.total * item.quantity).toLocaleString()}
-                </p>
-              </div>
-            ))}
-          </div>
 
           {/* Promo Code */}
           <h2 className="text-[#000000] text-[24px] font-semibold mt-4">Add a Promo Code</h2>

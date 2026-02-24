@@ -110,12 +110,11 @@ export default function Payment() {
       <Toaster />
       <Header />
       <main className="flex justify-center items-center my-20">
-        <section className="w-[50%] bg-white min-h-10 px-4">
+        <section className="md:w-[50%] w-full bg-white min-h-10 px-2 md:px-4">
           <h1 className="text-[#000000] text-[30px] font-bold py-2 border-b border-[#BDBDBD]">
             Payment
           </h1>
 
-          {/* Amount due */}
           {orderMeta && (
             <div className="mt-3 mb-2 flex justify-between items-center bg-orange-50 px-3 py-2 rounded-lg border border-orange-200">
               <p className="text-[#4B5563] text-[15px]">Amount Due</p>

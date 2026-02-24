@@ -46,7 +46,7 @@ export default function DeliveryDetails() {
       <Toaster />
       <Header />
       <main className="flex justify-center items-center">
-        <section className="w-[50%] min-h-10 bg-white my-10 px-4">
+        <section className="md:w-[50%] w-full min-h-10 bg-white my-10 px-2 md:px-4">
           <h1 className="text-[#000000] text-[30px] py-2 border-b border-[#BDBDBD] font-bold">
             Delivery Details
           </h1>
