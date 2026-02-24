@@ -96,12 +96,12 @@ export default function Order() {
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-[110px] h-[110px] md:w-[160px] md:h-[160px] flex-shrink-0 object-cover"
+                      className="w-[110px] h-[150px] md:w-[160px] md:h-[160px] flex-shrink-0 object-cover"
                     />
 
-                    <div className="flex-1 flex flex-col md:flex-row justify-between items-center px-3 py-2 md:px-5 md:py-3">
+                    <div className="flex-1 flex flex-col md:flex-row justify-between items-center px-1 py-2 md:px-5 md:py-3">
 
-                      <div className="flex-1">
+                      <div className="flex-0.5 md:mr-20">
                         <h4 className="text-[15px] md:text-[20px] text-[#000000] font-bold leading-snug">
                           {item.name}
                         </h4>
@@ -118,9 +118,9 @@ export default function Order() {
                         )}
                       </div>
 
-                      <div className="flex flex-1 items-center justify-between mt-2">
+                      <div className="flex flex-1 w-full items-center md:flex-row flex-col justify-between mt-2">
 
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-1 mr-0 md:mr-20 w-full items-center justify-between gap-3">
                           <button
                             onClick={() => increaseQty(item.cartId)}
                             className="fa-solid fa-plus text-[#4B5563] cursor-pointer hover:text-[#FF7A18] transition text-[14px] md:text-[16px]"
@@ -134,7 +134,7 @@ export default function Order() {
                           />
                         </div>
 
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-1 items-center w-full justify-between gap-3">
                           <p className="text-[#FF7A18] text-[16px] md:text-[22px] font-bold">
                             ₦{(item.total * item.quantity).toLocaleString()}
                           </p>

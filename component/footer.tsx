@@ -30,7 +30,7 @@ export default function Footer() {
               <li className="hover:text-white text-[12px] mb-2 cursor-pointer">Explore</li></Link>
               <Link href="/order">
               <li className="hover:text-white text-[12px] mb-2 cursor-pointer">My Order</li></Link>
-              <Link href="/home">
+              <Link href="/account">
               <li className="hover:text-white text-[12px] mb-2 cursor-pointer">Account</li></Link>
               <Link href="/">
               <li className="hover:text-white text-[12px] mb-2 cursor-pointer">Contact</li></Link>

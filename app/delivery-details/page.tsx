@@ -14,7 +14,6 @@ export default function DeliveryDetails() {
   const [contactPhone, setContactPhone] = useState("");
 
   useEffect(() => {
-    // Pre-fill phone from session
     const session = localStorage.getItem("chuks_kitchen_session");
     if (session) {
       const user = JSON.parse(session);
@@ -32,7 +31,6 @@ export default function DeliveryDetails() {
       return;
     }
 
-    // Save delivery details for payment page
     localStorage.setItem(
       "chuks_kitchen_delivery",
       JSON.stringify({ address, deliveryTime, deliveryInstructions, contactPhone })

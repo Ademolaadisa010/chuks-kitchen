@@ -21,7 +21,6 @@ interface FoodItem {
   sides: Extra[];
 }
 
-// Food data mapped to the exact cards in the original UI
 const popularItems: FoodItem[] = [
   {
     id: 101,
@@ -235,7 +234,6 @@ export default function Explore() {
             ))}
           </section>
 
-          {/* Jollof Rice & Entrees */}
           <h1 id="jollof-rice" className="md:text-[32px] text-[20px] text-[#1F2937] font-bold scroll-mt-6">Jollof Rice & Entrees</h1>
           <section className="w-full flex flex-wrap items-center justify-between mt-10">
             {jollofItems.map((food) => (
@@ -258,7 +256,6 @@ export default function Explore() {
             ))}
           </section>
 
-          {/* Swallow & Soups */}
           <h1 id="swallow-soups" className="md:text-[32px] text-[25px] text-[#1F2937] font-bold scroll-mt-6">Swallow & Soups</h1>
           <section className="w-full flex flex-wrap items-center justify-between mt-10">
             {swallowItems.map((food) => (
@@ -281,11 +278,8 @@ export default function Explore() {
             ))}
           </section>
 
-          {/* Grills & sides placeholder */}
           <div id="grills-sides" className="scroll-mt-6 mb-10" />
-          {/* Beverages placeholder */}
           <div id="beverages" className="scroll-mt-6 mb-10" />
-          {/* Desserts placeholder */}
           <div id="desserts" className="scroll-mt-6 mb-10" />
 
         </section>

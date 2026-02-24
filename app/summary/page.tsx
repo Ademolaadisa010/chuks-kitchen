@@ -83,7 +83,6 @@ export default function OrderSummary() {
   const total = subtotal + deliveryCharge + SERVICE_FEE + TAX - discountAmount;
 
   const handleConfirmCheckout = () => {
-    // Save summary data for delivery-details and payment pages
     localStorage.setItem(
       "chuks_kitchen_order_meta",
       JSON.stringify({
@@ -112,7 +111,6 @@ export default function OrderSummary() {
           </h1>
 
 
-          {/* Promo Code */}
           <h2 className="text-[#000000] text-[24px] font-semibold mt-4">Add a Promo Code</h2>
           <nav className="flex gap-4 mt-2 mb-6">
             <input
@@ -132,7 +130,6 @@ export default function OrderSummary() {
             </button>
           </nav>
 
-          {/* Price Breakdown */}
           <nav className="flex justify-between text-[#4B5563] text-[16px] mb-1">
             <p>Subtotal</p>
             <p>₦{subtotal.toLocaleString()}</p>
@@ -161,7 +158,6 @@ export default function OrderSummary() {
             <p className="text-[#FF7A18]">₦{total.toLocaleString()}</p>
           </div>
 
-          {/* Delivery / Pickup toggle */}
           <aside className="flex">
             <button
               onClick={() => setOrderType("delivery")}
@@ -177,7 +173,6 @@ export default function OrderSummary() {
             </button>
           </aside>
 
-          {/* Special Instructions */}
           <label className="mt-6 font-semibold text-[24px] block">
             Special Instructions for Restaurant
           </label>

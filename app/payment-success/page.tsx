@@ -50,7 +50,7 @@ export default function PaymentSuccess() {
             </svg>
           </div>
         ) : (
-          <div className="flex flex-col items-center text-center px-6 max-w-[400px] w-full">
+          <div className="flex flex-col items-center text-center px-6 max-w-[400px] py-10 w-full">
 
             <div className="w-[90px] h-[90px] rounded-full bg-[#1E7D4B] flex items-center justify-center mb-5 shadow-md">
               <i className="fa-solid fa-check text-white text-[38px]" />
@@ -80,7 +80,6 @@ export default function PaymentSuccess() {
               Generate Receipt
             </p>
 
-            {/* Need help */}
             <p
               onClick={() => router.push("/home")}
               className="text-[#1E88E5] text-[14px] cursor-pointer hover:underline"

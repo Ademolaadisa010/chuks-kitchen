@@ -89,13 +89,6 @@ export default function Payment() {
     localStorage.removeItem("chuks_kitchen_order_meta");
     localStorage.removeItem("chuks_kitchen_delivery");
 
-    toast.success("Payment successful! Order placed 🎉", {
-      duration: 2500,
-      position: "top-right",
-      style: { background: "#FF7A18", color: "#fff", fontWeight: "600" },
-      iconTheme: { primary: "#fff", secondary: "#FF7A18" },
-    });
-
     setTimeout(() => router.push("/payment-success"), 2500);
   };
 
@@ -111,14 +104,6 @@ export default function Payment() {
             Payment
           </h1>
 
-          {orderMeta && (
-            <div className="mt-3 mb-2 flex justify-between items-center bg-orange-50 px-3 py-2 rounded-lg border border-orange-200">
-              <p className="text-[#4B5563] text-[15px]">Amount Due</p>
-              <p className="text-[#FF7A18] font-bold text-[20px]">₦{total.toLocaleString()}</p>
-            </div>
-          )}
-
-          {/* Pay With */}
           <h3 className="text-[#0A0D13] text-[20px] font-semibold mt-4 mb-2">Pay With:</h3>
           <nav className="flex gap-2 mb-6">
             {(["card", "bank", "transfer"] as PaymentMethod[]).map((method) => (
@@ -131,12 +116,11 @@ export default function Payment() {
                     : "border-gray-200 text-[#4B5563] hover:border-[#FF7A18]"
                 }`}
               >
-                {method === "card" ? "💳 Card" : method === "bank" ? "🏦 Bank" : "🔁 Transfer"}
+                {method === "card" ? " Card" : method === "bank" ? " Bank" : " Transfer"}
               </button>
             ))}
           </nav>
 
-          {/* Card Form */}
           {paymentMethod === "card" && (
             <div>
               <label className="text-[16px] text-[#0A0D13] font-semibold">Card Number</label>
@@ -184,7 +168,6 @@ export default function Payment() {
             </div>
           )}
 
-          {/* Bank Form */}
           {paymentMethod === "bank" && (
             <div>
               <label className="text-[16px] text-[#0A0D13] font-semibold">Bank Name</label>
@@ -215,7 +198,6 @@ export default function Payment() {
             </div>
           )}
 
-          {/* Transfer Info */}
           {paymentMethod === "transfer" && (
             <div className="bg-orange-50 border border-orange-200 rounded-lg px-4 py-4">
               <p className="text-[#1F2937] font-semibold text-[16px] mb-2">Transfer Details</p>
