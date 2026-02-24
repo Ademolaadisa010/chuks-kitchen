@@ -93,18 +93,15 @@ export default function Order() {
                     key={item.cartId}
                     className="border border-[#BDBDBD] rounded-sm flex flex-row overflow-hidden"
                   >
-                    {/* Left: square food image */}
                     <img
                       src={item.image}
                       alt={item.name}
                       className="w-[110px] h-[110px] md:w-[160px] md:h-[160px] flex-shrink-0 object-cover"
                     />
 
-                    {/* Right: all details in a column */}
-                    <div className="flex-1 flex flex-col justify-between px-3 py-2 md:px-5 md:py-3">
+                    <div className="flex-1 flex flex-col md:flex-row justify-between items-center px-3 py-2 md:px-5 md:py-3">
 
-                      {/* Top: name + description */}
-                      <div>
+                      <div className="flex-1">
                         <h4 className="text-[15px] md:text-[20px] text-[#000000] font-bold leading-snug">
                           {item.name}
                         </h4>
@@ -121,10 +118,8 @@ export default function Order() {
                         )}
                       </div>
 
-                      {/* Bottom: qty controls on left | price + X on right */}
-                      <div className="flex items-center justify-between mt-2">
+                      <div className="flex flex-1 items-center justify-between mt-2">
 
-                        {/* Left: + qty - */}
                         <div className="flex items-center gap-3">
                           <button
                             onClick={() => increaseQty(item.cartId)}
@@ -139,7 +134,6 @@ export default function Order() {
                           />
                         </div>
 
-                        {/* Right: price + X side by side */}
                         <div className="flex items-center gap-3">
                           <p className="text-[#FF7A18] text-[16px] md:text-[22px] font-bold">
                             ₦{(item.total * item.quantity).toLocaleString()}

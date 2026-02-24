@@ -130,7 +130,6 @@ function FoodDetailContent() {
             {food.description}
           </p>
 
-          {/* Tags */}
           <div className="flex gap-4 mt-4 flex-wrap">
             {food.tags.map((tag) => (
               <span key={tag} className="flex items-center gap-1 text-[13px] text-[#3B4758]">
@@ -144,7 +143,6 @@ function FoodDetailContent() {
 
           <hr className="my-5 border-gray-200" />
 
-          {/* Proteins */}
           {food.proteins.length > 0 && (
             <>
               <h3 className="text-[18px] font-bold text-[#1F2937] mb-3">
@@ -177,7 +175,6 @@ function FoodDetailContent() {
             </>
           )}
 
-          {/* Sides */}
           {food.sides.length > 0 && (
             <>
               <h3 className="text-[18px] font-bold text-[#1F2937] mb-3">
@@ -209,7 +206,6 @@ function FoodDetailContent() {
             </>
           )}
 
-          {/* Special Instructions */}
           <h3 className="text-[18px] font-bold text-[#1F2937] mb-3">
             Special Instructions
           </h3>
@@ -225,7 +221,7 @@ function FoodDetailContent() {
             onClick={handleAddToCart}
             className="w-full bg-[#FF7A18] text-white text-[16px] font-semibold py-4 rounded-lg mt-5 mb-8 hover:bg-orange-600 transition cursor-pointer"
           >
-            Add to Cart — ₦{total.toLocaleString()}
+            Add to Cart ₦{total.toLocaleString()}
           </button>
         </div>
       </div>

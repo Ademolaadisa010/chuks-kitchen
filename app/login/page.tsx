@@ -115,7 +115,7 @@ export default function Login() {
 
       <main className="flex w-full">
         <aside
-          className="relative hidden md:block flex flex-1 min-h-screen items-center justify-center bg-cover bg-center"
+          className="relative hidden md:flex flex-1 min-h-screen items-center justify-center bg-cover bg-center"
           style={{ backgroundImage: "url('/family.svg')" }}
         >
           <div className="absolute inset-0 bg-[#FF7A18B2]"></div>

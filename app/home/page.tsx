@@ -2,6 +2,7 @@
 
 import Footer from "@/component/footer";
 import Header from "@/component/header";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 interface Extra {
@@ -146,7 +147,6 @@ export default function Home() {
       <Header />
 
       <main>
-        {/* Hero */}
         <section
           className="relative flex flex-1 min-h-screen items-center bg-cover bg-center"
           style={{ backgroundImage: "url('/Welcome.png')" }}
@@ -159,9 +159,10 @@ export default function Home() {
             <p className="leading-relaxed mt-5 md:text-[32px] text-[16px] font-semibold">
               Handcrafted with passion, delivered with care.
             </p>
+            <Link href="/explore">
             <button className="bg-[#FF7A18] mt-5 px-5 py-3 rounded-lg cursor-pointer">
               Discover what&apos;s new
-            </button>
+            </button></Link>
           </div>
         </section>
 
@@ -236,9 +237,10 @@ export default function Home() {
               Explore exciting new dishes, crafted with the freshest ingredients
               and authentic Nigerian flavors. Limited time offer!
             </p>
+            <Link href="/explore">
             <button className="bg-[#FF7A18] mt-5 px-5 py-3 rounded-lg cursor-pointer text-white">
               Discover what&apos;s new
-            </button>
+            </button></Link>
           </div>
         </section>
       </main>
