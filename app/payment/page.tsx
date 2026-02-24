@@ -24,12 +24,10 @@ export default function Payment() {
   const [saveCard, setSaveCard] = useState(false);
   const [placing, setPlacing] = useState(false);
 
-  // Card fields
   const [cardNumber, setCardNumber] = useState("");
   const [expiry, setExpiry] = useState("");
   const [cvv, setCvv] = useState("");
 
-  // Bank fields
   const [bankName, setBankName] = useState("");
   const [accountNumber, setAccountNumber] = useState("");
 
@@ -70,7 +68,6 @@ export default function Payment() {
 
     setPlacing(true);
 
-    // Finalize and save order
     const checkout = localStorage.getItem("chuks_kitchen_checkout");
     const delivery = localStorage.getItem("chuks_kitchen_delivery");
     const meta = localStorage.getItem("chuks_kitchen_order_meta");
@@ -87,7 +84,6 @@ export default function Payment() {
     });
     localStorage.setItem("chuks_kitchen_orders", JSON.stringify(orders));
 
-    // Clear all checkout state
     localStorage.removeItem("chuks_kitchen_cart");
     localStorage.removeItem("chuks_kitchen_checkout");
     localStorage.removeItem("chuks_kitchen_order_meta");
@@ -100,7 +96,7 @@ export default function Payment() {
       iconTheme: { primary: "#fff", secondary: "#FF7A18" },
     });
 
-    setTimeout(() => router.push("/home"), 2500);
+    setTimeout(() => router.push("/payment-success"), 2500);
   };
 
   const total = orderMeta?.total ?? 0;
